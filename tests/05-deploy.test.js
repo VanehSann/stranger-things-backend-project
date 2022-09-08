@@ -19,6 +19,7 @@ describe('5 - Verifica o Deploy no Heroku', () => {
       .expect('status', 200)
       .then((response) => {
         const { body } = response;
+        console.log(body, HAWKINS_URL)
         JSON.parse(body).forEach((character) => {
           expect(data).toContainEqual(character);
         });
@@ -32,6 +33,7 @@ describe('5 - Verifica o Deploy no Heroku', () => {
         .expect('status', 200)
         .then((response) => {
           const { body } = response;
+          console.log(body, UPSIDEDOWN_URL)
           JSON.parse(body).forEach((character) => {
             expect(flipData).toContainEqual(character);
           });
